@@ -34,6 +34,12 @@
         <img src="ChatGPT Image 19 Agu 2026, 09.05.25.png" alt="Logo Mas Bup">
       </div>
 
+      <button class="nav-menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navTabs">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <!--
         Menu tab navigasi.
         - Setiap tombol punya atribut data-target, isinya adalah id="..."
@@ -42,7 +48,7 @@
           section yang sesuai dan menyembunyikan section lainnya.
         - class "active" menandai tab mana yang sedang terbuka.
       -->
-      <nav class="tabs" id="navTabs">
+      <nav class="tabs" id="navTabs" aria-label="Navigasi utama">
         <button data-target="beranda" class="active">Beranda</button>
         <button data-target="alur">Panduan & Status</button>
         <button data-target="jenis">Persyaratan</button>

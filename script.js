@@ -52,8 +52,30 @@ function goTo(id){
 // Pasang event listener klik ke SETIAP tombol menu di navbar.
 // Saat tombol diklik, otomatis panggil goTo() dengan id sesuai
 // data-target milik tombol tersebut.
+const navMenuToggle = document.querySelector('.nav-menu-toggle');
+const siteNav = document.querySelector('.site-nav');
 document.querySelectorAll('nav.tabs button').forEach(btn=>{
-  btn.addEventListener('click', ()=>goTo(btn.dataset.target));
+  btn.addEventListener('click', ()=>{
+    goTo(btn.dataset.target);
+    siteNav.classList.remove('menu-open');
+    navMenuToggle.setAttribute('aria-expanded', 'false');
+    navMenuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+  });
+});
+
+navMenuToggle.addEventListener('click', ()=>{
+  const isOpen = siteNav.classList.toggle('menu-open');
+  navMenuToggle.setAttribute('aria-expanded', String(isOpen));
+  navMenuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+});
+
+document.addEventListener('keydown', event=>{
+  if(event.key === 'Escape' && siteNav.classList.contains('menu-open')){
+    siteNav.classList.remove('menu-open');
+    navMenuToggle.setAttribute('aria-expanded', 'false');
+    navMenuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+    navMenuToggle.focus();
+  }
 });
 
 // Saat halaman pertama kali dimuat, paksa kembali ke posisi awal dan
@@ -223,6 +245,66 @@ const panelFiles = {
 };
 
 let documentPreviewCounter = 0;
+let pdfJsModule;
+
+async function renderMobilePdf(file, preview){
+  if(preview.dataset.pdfRendered === 'true') return;
+  preview.dataset.pdfRendered = 'true';
+  const previousPages = preview.querySelector('.req-pdf-pages');
+  if(previousPages) previousPages.remove();
+
+  const pages = document.createElement('div');
+  pages.className = 'req-pdf-pages';
+  const status = document.createElement('p');
+  status.className = 'req-pdf-status';
+  status.textContent = 'Memuat pratinjau dokumen...';
+  pages.append(status);
+  preview.append(pages);
+
+  try{
+    if(!pdfJsModule){
+      pdfJsModule = import(new URL('vendor/pdfjs/pdf.min.mjs', document.baseURI).href).then(module=>{
+        module.GlobalWorkerOptions.workerSrc = new URL('vendor/pdfjs/pdf.worker.min.mjs', document.baseURI).href;
+        return module;
+      }).catch(error=>{
+        pdfJsModule = undefined;
+        throw error;
+      });
+    }
+
+    const pdfjs = await pdfJsModule;
+    const pdfDocument = await pdfjs.getDocument(file).promise;
+    status.remove();
+
+    for(let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber++){
+      const page = await pdfDocument.getPage(pageNumber);
+      const baseViewport = page.getViewport({scale:1});
+      const cssScale = Math.min((pages.clientWidth - 16) / baseViewport.width, 1.5);
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      const viewport = page.getViewport({scale:cssScale * pixelRatio});
+      const canvas = window.document.createElement('canvas');
+      canvas.className = 'req-pdf-page';
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      canvas.style.width = `${baseViewport.width * cssScale}px`;
+      canvas.style.height = `${baseViewport.height * cssScale}px`;
+      pages.append(canvas);
+      await page.render({canvasContext:canvas.getContext('2d'), viewport}).promise;
+    }
+  }catch(error){
+    console.error('Gagal memuat pratinjau PDF:', error);
+    pages.classList.add('req-pdf-error');
+    pages.replaceChildren();
+    status.textContent = 'Pratinjau tidak dapat dimuat. Buka dokumen langsung:';
+    const link = window.document.createElement('a');
+    link.href = file;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = 'Buka PDF';
+    pages.append(status, link);
+    preview.dataset.pdfRendered = 'false';
+  }
+}
 
 function addFileActions(item, panelId){
   const files = panelFiles[panelId];
@@ -330,7 +412,11 @@ function addFileActions(item, panelId){
   if(!item.classList.contains('example-file-label') && !hideDownload) preview.prepend(downloadLink);
   toggle.addEventListener('click', ()=>{
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    if(!isOpen && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+    if(!isOpen && window.matchMedia('(max-width: 767px)').matches && /\.pdf(?:$|[?#])/i.test(file)){
+      renderMobilePdf(file, preview);
+    }else if(!isOpen && !frame.hasAttribute('src')){
+      frame.src = frame.dataset.src;
+    }
     toggle.setAttribute('aria-expanded', String(!isOpen));
     preview.hidden = isOpen;
     toggle.textContent = isOpen ? label : 'Tutup pratinjau dokumen';

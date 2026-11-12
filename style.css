@@ -23,7 +23,7 @@ nav.tabs button:hover{color:var(--cream);background:rgba(255,255,255,0.06);}
 nav.tabs button.active{color:var(--white);background:var(--accent-red);}
 .cta-daftar{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:var(--accent-red);color:var(--white);padding:10px 16px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 6px 18px rgba(166,61,64,0.35);transition:transform .18s ease, box-shadow .18s ease;border:1px solid rgba(255,255,255,0.15);}
 .cta-daftar:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(220,53,69,0.45);}
-.burger{display:none;}
+.burger,.nav-menu-toggle{display:none;}
 main{position:relative;}
 section.page{display:none;padding:64px 0 90px;}
 section.page.active{display:block;animation:fadeUp .5s ease;}
@@ -804,6 +804,56 @@ footer{background:linear-gradient(135deg,#17365D,#A63D40);}
   #jenis .req-item{gap:10px;}
   #jenis .req-body p{font-size:14px;}
 }
+
+@media (max-width:880px){
+  .nav-inner{
+    position:relative;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:0;
+    overflow:visible;
+    padding:8px 18px;
+  }
+  .nav-menu-toggle{
+    display:flex;
+    width:44px;
+    height:44px;
+    flex:0 0 44px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:0;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:10px;
+    background:transparent;
+    cursor:pointer;
+  }
+  .nav-menu-toggle span{
+    width:21px;
+    height:2px;
+    border-radius:2px;
+    background:var(--white);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .site-nav.menu-open .nav-menu-toggle span:first-child{transform:translateY(7px) rotate(45deg);}
+  .site-nav.menu-open .nav-menu-toggle span:nth-child(2){opacity:0;}
+  .site-nav.menu-open .nav-menu-toggle span:last-child{transform:translateY(-7px) rotate(-45deg);}
+  nav.tabs{
+    display:none;
+    order:3;
+    flex:0 0 100%;
+    flex-direction:column;
+    gap:4px;
+    margin:8px 0 0;
+    padding:8px;
+    border-top:1px solid rgba(255,255,255,.14);
+  }
+  .site-nav.menu-open nav.tabs{display:flex;}
+  nav.tabs button{text-align:left;padding:12px;}
+  .cta-daftar{display:none;order:4;flex:0 0 100%;justify-content:center;margin:4px 0 8px;}
+  .site-nav.menu-open .cta-daftar{display:inline-flex;}
+}
 #jenis .req-list{gap:14px;margin-top:18px;}
 #jenis .req-item{display:flex;align-items:flex-start;gap:14px;padding:16px 44px 16px 18px;border:1px solid rgba(36,56,72,.14);border-radius:12px;background:#fdfcf9;position:relative;}
 #jenis .req-item:hover{box-shadow:0 8px 18px rgba(36,56,72,.08);}
@@ -1215,6 +1265,57 @@ footer{background:linear-gradient(135deg,#17365D,#A63D40);}
     min-height: 32px;
     padding-top: 5px;
     font-size: 14.5px;
+  }
+}
+
+@media (max-width: 767px) {
+  #jenis .cat-panel,
+  #jenis .jpanel {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #jenis .req-preview iframe {
+    display: none;
+  }
+
+  #jenis .req-preview {
+    width: calc(100% + 52px);
+    margin-left: -52px;
+  }
+
+  #jenis .req-pdf-pages {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border: 1px solid rgba(30, 40, 60, .12);
+    border-radius: 12px;
+    background: #e8e8e8;
+    overflow-x: auto;
+  }
+
+  #jenis .req-pdf-page {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+  }
+
+  #jenis .req-pdf-status {
+    margin: 12px;
+    color: var(--dark-text);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #jenis .req-pdf-error a {
+    margin-bottom: 12px;
+    color: var(--traditional-green);
+    font-weight: 700;
   }
 }
 /* ---------- Syarat Umum: tampilan biasa, tanpa efek interaktif/navigasi ---------- */
