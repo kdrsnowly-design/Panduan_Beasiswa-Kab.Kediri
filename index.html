@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEASISWA PENDIDIKAN BERBUDAYA PEMERINTAH KABUPATEN KEDIRI</title>
+
+    <!-- Font utama untuk heading, isi, dan label teknis. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- File CSS utama. Semua warna, ukuran, dan tata letak diatur di sini. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       1. HEADER / NAVBAR
+       Berisi logo, menu navigasi (tab), dan tombol "Daftar Sekarang".
+       id="navTabs" dipakai oleh script.js untuk mengatur tab yang aktif.
+  ===================================================================== -->
+  <header class="site-nav">
+
+    <!-- Garis dekorasi motif kawung di paling atas header -->
+    <div class="kawung-band"></div>
+
+    <div class="nav-inner">
+
+      <!-- Kumpulan logo (Kediri, Lambang Kabupaten, Logo Mas Bup) -->
+      <div class="brand">
+        <img src="ChatGPT Image 19 Agu 2026, 08.58.37.png" alt="Logo Kediri">
+        <img src="ChatGPT Image 19 Agu 2026, 07.59.39.png" alt="Lambang Kabupaten Kediri">
+        <img src="ChatGPT Image 19 Agu 2026, 09.05.25.png" alt="Logo Mas Bup">
+      </div>
+
+      <!--
+        Menu tab navigasi.
+        - Setiap tombol punya atribut data-target, isinya adalah id="..."
+          dari <section class="page" id="..."> yang ada di bawah.
+        - script.js akan membaca data-target ini untuk menampilkan
+          section yang sesuai dan menyembunyikan section lainnya.
+        - class "active" menandai tab mana yang sedang terbuka.
+      -->
+      <nav class="tabs" id="navTabs">
+        <button data-target="beranda" class="active">Beranda</button>
+        <button data-target="alur">Panduan & Status</button>
+        <button data-target="jenis">Persyaratan</button>
+        <button data-target="jadwal">Jadwal Pelaksanaan</button>
+        <button data-target="kontak">Kontak / FAQ</button>
+      </nav>
+
+      <!-- Tombol ke website pendaftaran resmi (dibuka di tab baru) -->
+      <a class="cta-daftar" href="https://beasiswa.kedirikab.go.id/" target="_blank" rel="noopener">Daftar Sekarang ↗</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================================
+         2. SECTION "BERANDA" (Halaman Utama / Home)
+         Ini adalah section pertama yang tampil (class="page active").
+    ===================================================================== -->
+    <section class="page active" id="beranda">
+
+      <!-- ---------- 2.1 HERO (banner besar paling atas) ---------- -->
+      <div class="hero">
+
+        <!-- Kumpulan foto kecil (collage) sebagai background hero.
+             aria-hidden="true" karena ini cuma dekorasi, bukan konten penting. -->
+        <div class="hero-collage" aria-hidden="true">
+          <div class="collage-tile tile-1"></div>
+          <div class="collage-tile tile-2"></div>
+          <div class="collage-tile tile-3"></div>
+          <div class="collage-tile tile-4"></div>
+          <div class="collage-tile tile-5"></div>
+          <div class="collage-tile tile-6"></div>
+          <div class="collage-tile tile-7"></div>
+          <div class="collage-tile tile-8"></div>
+          <div class="collage-tile tile-9"></div>
+        </div>
+
+        <!-- Lapisan gelap transparan di atas foto, supaya teks judul terbaca -->
+        <div class="hero-overlay"></div>
+
+        <div class="wrap hero-inner">
+          <div class="hero-text">
+            <h1>BEASISWA PENDIDIKAN BERBUDAYA <br>PEMERINTAH KABUPATEN KEDIRI</BR></h1>
+
+            <!-- Dua tombol aksi utama di hero -->
+            <div class="hero-actions">
+              <a class="btn-primary" href="https://beasiswa.kedirikab.go.id/" target="_blank" rel="noopener">Daftar Sekarang</a>
+              <!-- onclick="goTo('jenis')" -> fungsi ini ada di script.js,
+                   tugasnya pindah ke section id="jenis" (Persyaratan) -->
+              <button class="btn-ghost" onclick="goTo('jenis')">Lihat Persyaratan Beasiswa</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garis motif kawung dekorasi di bagian bawah hero -->
+        <div class="jenjang-band"><div class="wrap jenjang-inner"><div class="kawung-band" style="margin-top:0;"></div></div></div>
+      </div>
+
+      <div class="beranda-content">
+
+        <!-- ---------- 2.2 Kalimat pengantar / deskripsi program ---------- -->
+        <div class="beranda-intro-wrap">
+          <div class="beranda-intro">
+            <h2>BEASISWA PENDIDIKAN BERBUDAYA PEMERINTAH KABUPATEN KEDIRI</h2>
+            <p>Beasiswa Pendidikan Berbudaya adalah program dari Pemerintah Kabupaten Kediri yang hadir untuk mendukung masyarakat agar dapat terus melanjutkan pendidikan tanpa terkendala biaya, sekaligus mendorong tumbuhnya semangat pelestarian dan pengembangan budaya daerah.</p>
+          </div>
+          <div class="beranda-intro-image" role="img" aria-label="Kegiatan beasiswa pendidikan"></div>
+        </div>
+
+        <!-- ---------- 2.3 Kartu "Jenis Beasiswa" (4 kartu) ---------- -->
+        <section class="home-block home-types">
+          <div class="home-section-title"><h3>JENIS BEASISWA</h3></div>
+
+          <div class="about-grid">
+
+            <!-- Kartu 1: Beasiswa Berdaya -->
+            <div class="about-card">
+              <div class="home-card-icon icon-purple" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M7 27 32 15l25 12-25 12L7 27Z"/><path d="M15 35v9c10 6 24 6 34 0v-9M53 27v18"/><path d="M50 45h6v7M14 53h36"/><path d="M22 37h20"/></svg>
+              </div>
+              <h4>Beasiswa <br>Berdaya</br> </h4>
+              <p>Bantuan pendidikan untuk warga tidak mampu, berprestasi, maupun disabilitas dari jenjang SD hingga Sarjana, baik mahasiswa baru atau aktif PTN maupun PTS.</p>
+              <!-- Tombol ini juga memakai goTo('jenis') dari script.js -->
+              <button class="home-card-link" onclick="goToCategory('berdaya')">Lihat Detail ›</button>
+            </div>
+
+            <!-- Kartu 2: Beasiswa Sambut Bandara -->
+            <div class="about-card">
+              <div class="home-card-icon icon-blue" aria-hidden="true"><img src="beasiswa-sambut-bandara-hitam.png" alt=""></div>
+              <h4>Beasiswa Sambut <br>Bandara</br></h4>
+              <p>Bantuan pelatihan vokasi intensif bagi lulusan SMA atau SMK sederajat guna membekali peserta dengan keahlian teknis sebagai tenaga pendukung operasional bandara.</p>
+              <button class="home-card-link" onclick="goToCategory('bandara')">Lihat Detail ›</button>
+            </div>
+
+            <!-- Kartu 3: Beasiswa Kapal Pesiar -->
+            <div class="about-card">
+              <div class="home-card-icon icon-green" aria-hidden="true"><img src="beasiswa-kapal-pesiar-hitam.png" alt=""></div>
+              <h4>Beasiswa Kapal <br> Pesiar </br>  </h4>
+              <p>Program beasiswa tingkat D1 bagi lulusan SMA sederajat asal Kabupaten Kediri yang siap bekerja di kapal pesiar, mencakup pendidikan, asrama, konsumsi.</p>
+              <button class="home-card-link" onclick="goToCategory('kapal')">Lihat Detail ›</button>
+            </div>
+
+            <!-- Kartu 4: Beasiswa Merdeka Bhakta -->
+            <div class="about-card">
+              <div class="home-card-icon icon-orange" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M18 12v15c0 8 6 14 14 14s14-6 14-14V12M18 12h8M38 12h8M32 41v8c0 4-3 7-7 7h-3"/><circle cx="19" cy="56" r="4"/><path d="M43 22h12M49 16v12"/></svg>
+              </div>
+              <h4>Beasiswa Merdeka Bhakta</h4>
+              <p>Program beasiswa kolaborasi Pemerintah Kabupaten Kediri bersama Institut Ilmu Kesehatan (IIK) Bhakti Wiyata yang diberikan kepada mahasiswa hingga lulus untuk mencetak tenaga kesehatan profesional.</p>
+              <button class="home-card-link" onclick="goToCategory('bakti')">Lihat Detail ›</button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ---------- 2.4 Kartu "Syarat Umum" (4 kartu) ---------- -->
+        <section class="home-block home-requirements">
+          <div class="home-section-title"><h3>SYARAT UMUM</h3></div>
+
+          <div class="about-grid requirements-grid">
+
+            <div class="about-card">
+              <div class="requirement-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M32 57s18-17 18-31a18 18 0 1 0-36 0c0 14 18 31 18 31Z"/><circle cx="32" cy="26" r="6"/></svg>
+              </div>
+              <h4>Warga Kabupaten Kediri</h4>
+              <p>Pemohon harus merupakan warga asli atau berdomisili di Kabupaten Kediri.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="requirement-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="m8 30 24-20 24 20M14 27v25h36V27M25 52V38h14v14"/></svg>
+              </div>
+              <h4>Satu Kartu keluarga Satu Pemohon  </h4>
+              <p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam satu Kartu Keluarga.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="requirement-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><path d="m17 17 30 30"/></svg>
+              </div>
+              <h4>Tidak Menerima Bantuan Lain </h4>
+              <p>Tidak menerima bantuan sosial pendidikan dari sumber lain.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="requirement-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M8 25 32 13l24 12-24 12L8 25Z"/><path d="M18 32v12c8 6 20 6 28 0V32M56 25v16M51 45h5v7"/></svg>
+              </div>
+              <h4>Peserta Didik / Mahasiswa Aktif</br></h4>
+              <p>Khusus Beasiswa Berdaya Tercatat sebagai peserta atau mahasiswa aktif jika masih duduk di bangku sekolah atau perguruan tinggi.</p>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. SECTION "ALUR" (Panduan Pendaftaran & Cek Status)
+         Ada 2 bagian besar di dalam section ini:
+           a) ALUR PENDAFTARAN (id="alur-pendaftaran") - 8 langkah
+           b) ALUR CEK STATUS   (id="alur-cek-status") - 6 langkah
+         Tombol di atas memakai smooth scroll ke masing-masing id tersebut.
+    ===================================================================== -->
+    <section class="page" id="alur">
+
+      <!-- Judul + 2 tombol pintasan (scroll ke bagian pendaftaran / cek status) -->
+      <section class="panduan-status-section">
+        <div class="panduan-subtitle">BEASISWA BERBUDAYA – KABUPATEN KEDIRI</div>
+
+        <h1 class="panduan-title">
+          ALUR PANDUAN PENDAFTARAN<br>DAN CEK STATUS SECARA ONLINE
+        </h1>
+
+        <div class="button-container">
+          <!-- Klik tombol ini akan scroll halus ke section id="alur-pendaftaran" -->
+          <a href="#alur-pendaftaran" class="btn-panduan"
+             onclick="document.getElementById('alur-pendaftaran').scrollIntoView({behavior:'smooth'});return false;">
+             Alur Pendaftaran
+          </a>
+          <!-- Klik tombol ini akan scroll halus ke section id="alur-cek-status" -->
+          <a href="#alur-cek-status" class="btn-panduan"
+             onclick="document.getElementById('alur-cek-status').scrollIntoView({behavior:'smooth'});return false;">
+             Alur Cek Status
+          </a>
+        </div>
+      </section>
+
+      <div class="wrap alur-content">
+
+        <!-- ============ 3a. ALUR PENDAFTARAN (8 langkah) ============ -->
+        <div class="home-section-title alur-heading" id="alur-pendaftaran" style="margin:56px 0 30px;">
+          <span class="decor-mark">◆</span>
+          <h3>ALUR PENDAFTARAN</h3>
+          <span class="decor-mark">◆</span>
+        </div>
+
+        <div class="flow">
+
+          <!-- Langkah 1: Buka Situs -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">1</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="4" y="10" width="56" height="44" rx="6" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <rect x="4" y="10" width="56" height="12" rx="6" fill="var(--navy-deep)"/>
+                  <circle cx="11" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="16.5" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="22" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <rect x="16" y="32" width="32" height="12" rx="6" fill="var(--red)"/>
+                  <text x="32" y="40.5" font-size="7" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">DAFTAR</text>
+                  <path d="M46 40 L54 48 M54 48 L54 41 M54 48 L47 48" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Garis vertikal penghubung ke langkah berikutnya -->
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4> Buka Situs</h4>
+              <p>Buka Google dan ketikan <b>beasiswa.kedirikab.go.id</b>, lalu pilih bagian paling atas</p>
+              <img src="alur/cek status/WhatsApp Image 2026-08-21 at 10.56.42.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 2: Pilih Kategori Beasiswa -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">2</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="4" y="10" width="56" height="44" rx="6" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <rect x="4" y="10" width="56" height="12" rx="6" fill="var(--navy-deep)"/>
+                  <circle cx="11" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="16.5" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="22" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <rect x="16" y="32" width="32" height="12" rx="6" fill="var(--red)"/>
+                  <text x="32" y="40.5" font-size="7" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">DAFTAR</text>
+                  <path d="M46 40 L54 48 M54 48 L54 41 M54 48 L47 48" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Garis vertikal penghubung ke langkah berikutnya -->
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Pendaftaran</h4>
+              <p> Klik tombol <b>DAFTAR SEKARANG</b>, berwarna merah </p>
+              <img src="alur/pendaftara/WhatsApp Image 2026-08-26 at 14.17.11.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+           <!-- Langkah 3: Pilih Kategori Beasiswa -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">3</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="4" y="10" width="56" height="44" rx="6" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <rect x="4" y="10" width="56" height="12" rx="6" fill="var(--navy-deep)"/>
+                  <circle cx="11" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="16.5" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="22" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <rect x="16" y="32" width="32" height="12" rx="6" fill="var(--red)"/>
+                  <text x="32" y="40.5" font-size="7" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">DAFTAR</text>
+                  <path d="M46 40 L54 48 M54 48 L54 41 M54 48 L47 48" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Garis vertikal penghubung ke langkah berikutnya -->
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Kategori Beasiswa</h4>
+              <p>Pilih Beasiswa dan Jalur yang Sesuai dengan Klik tulisan <b>Daftar</b> </p>
+              <img src="alur/pendaftara/WhatsApp Image 2026-08-26 at 14.18.22.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 4: Isi NIK & Nomor KK -->
+         <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">4</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="4" y="10" width="56" height="44" rx="6" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <rect x="4" y="10" width="56" height="12" rx="6" fill="var(--navy-deep)"/>
+                  <circle cx="11" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="16.5" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="22" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <rect x="16" y="32" width="32" height="12" rx="6" fill="var(--red)"/>
+                  <text x="32" y="40.5" font-size="7" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">Isi Nomor Induk Kependudukan (NIK) & Nomor Kartu Keluarga (KK) </text>
+                  <path d="M46 40 L54 48 M54 48 L54 41 M54 48 L47 48" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Garis vertikal penghubung ke langkah berikutnya -->
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Input Data Awal</h4>
+              <p>Isikan Nomor Kartu Keluarga (KK) Dan Nomor Induk Kependudukan (NIK) Pendaftar dengan benar. Harap <b>Teliti </b>lagi setelah mengisi. lalu klik <b>cari warna hijau</b></p>
+              <img src="alur/pendaftara/WhatsApp Image 2026-08-26 at 14.22.24.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 5: Lengkapi Data Diri -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">5</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="12" y="6" width="34" height="46" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.4"/>
+                  <rect x="18" y="15" width="22" height="3" rx="1.5" fill="rgba(27,28,70,0.2)"/>
+                  <rect x="18" y="22" width="22" height="3" rx="1.5" fill="rgba(27,28,70,0.2)"/>
+                  <rect x="18" y="29" width="15" height="3" rx="1.5" fill="rgba(27,28,70,0.2)"/>
+                  <path d="M40 34 L54 20 L59 25 L45 39 L38 41 Z" fill="var(--gold)" stroke="var(--navy-deep)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Lengkapi Data Diri</h4>
+              <p>Isi seluruh data diri pada formulir dengan lengkap dan teliti. Lalu Klik tombol <b>Lanjutkan</b> berwarna hijau.</p>
+              <div class="container-gambar">
+                <img src="alur/pendaftara/WhatsApp Image 2026-08-31 at 10.38.47.jpeg" class="fscreenshot">
+                <img src="alur/pendaftara/WhatsApp Image 2026-08-31 at 10.36.07.jpeg" class="fscreenshot">
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 6: Unduh Nomor Pendaftaran -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">6</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path d="M32 6 L52 14 V30 C52 44 42 53 32 58 C22 53 12 44 12 30 V14 Z" fill="none" stroke="var(--navy-deep)" stroke-width="2.4" stroke-linejoin="round"/>
+                  <path d="M32 20 V38 M32 38 L25 31 M32 38 L39 31" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="22" y="42" width="20" height="3" rx="1.5" fill="var(--gold-light)"/>
+                </svg>
+              </div>
+              <!-- Ini langkah terakhir dalam grup "Alur Pendaftaran",
+                   jadi tidak perlu div.fline (garis penghubung) lagi -->
+            </div>
+            <div class="fcontent">
+              <h4>Cek Ulang</h4>
+              <p>Periksa kembali data Anda, centang pernyataan persetujuan, lalu klik <b>Submit</b> (tombol hijau).</p>
+              <div class="container-gambar">
+                <img src="alur/pendaftara/WhatsApp Image 2026-08-31 at 12.01.20.jpeg" class="fscreenshot">
+                <img src="alur/pendaftara/WhatsApp Image 2026-08-26 at 14.31.30.jpeg" class="fscreenshot">
+              </div>
+            </div>
+          </div>
+
+                  <!-- Langkah 7: Submit -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">7</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="10" y="8" width="44" height="48" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M18 20h28M18 28h28M18 36h18" stroke="var(--navy-deep)" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M42 38v14M35 45l7 7 7-7" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Bukti Pendaftaran</h4>
+              <p>Setelah pendaftaran berhasil, klik <b>Simpan dan Cetak</b> (tombol hijau) untuk mengunduh bukti pendaftaran Anda.</p>
+              <img src="alur/pendaftara/WhatsApp Image 2026-08-31 at 12.15.47.jpeg" class="fscreenshot" style="margin-top:14px;">
+            </div>
+          </div>
+
+          <!-- Langkah 8: Simpan Bukti Pendaftaran -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">8</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="10" y="8" width="44" height="48" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M18 20h28M18 28h28M18 36h18" stroke="var(--navy-deep)" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M42 38v14M35 45l7 7 7-7" stroke="var(--gold)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Langkah terakhir dalam grup "Alur Pendaftaran" -->
+            </div>
+            <div class="fcontent">
+              <h4>Simpan Bukti Pendaftaran</h4>
+              <p>Simpan file nomor pendaftaran di tempat yang aman. Nomor tersebut digunakan untuk dilampirkan pada berkas saat pengumpulan dan untuk mengecek status pendaftaran pada langkah berikutnya.</p>
+            </div>
+          </div>
+
+        </div><!-- /.flow (alur pendaftaran) -->
+
+        <!-- Ringkasan proses setelah pendaftaran -->
+        <div class="after-steps">
+          <h5>Setelah mendaftar Online — apa yang terjadi berikutnya?</h5>
+          <div class="after-item">
+            <b>Persiapan berkas</b>
+            <span>Menyiapkan seluruh berkas yang dibutuhkan. Periksa kembali kelengkapan & kesesuaian sebelum dikumpulkan.</span>
+          </div>
+          <div class="after-item">
+            <b>Pengumpulan ke kantor</b>
+            <span>Berkas yang telah disiapkan dikumpulkan ke kantor sesuai jam pelayanan.</span>
+          </div>
+          <div class="after-item">
+            <b>Verifikasi</b>
+            <span>Petugas memeriksa kelengkapan & keabsahan data yang dikirim.</span>
+          </div>
+          <div class="after-item">
+            <b>Seleksi &amp; survei</b>
+             <span>Tim Beasiswa Pendidikan menyeleksi dan mensurvei data yang lolos verifikasi.</span>
+          </div>
+          <div class="after-item">
+            <b>Pengumuman</b>
+           <span>Peserta yang lolos diumumkan resmi melalui situs pendaftaran.</span>
+          </div>
+        </div>
+
+        <!-- ============ 3b. ALUR CEK STATUS (6 langkah) ============ -->
+        <div class="home-section-title alur-heading" id="alur-cek-status" style="margin:64px 0 30px;">
+          <span class="decor-mark">◆</span>
+          <h3>ALUR CEK STATUS</h3>
+          <span class="decor-mark">◆</span>
+        </div>
+
+        
+        <div class="flow">
+
+          <!-- Langkah 1: Buka Situs -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">1</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="4" y="10" width="56" height="44" rx="6" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <rect x="4" y="10" width="56" height="12" rx="6" fill="var(--navy-deep)"/>
+                  <circle cx="11" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="16.5" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <circle cx="22" cy="16" r="1.8" fill="var(--gold-light)"/>
+                  <rect x="16" y="32" width="32" height="12" rx="6" fill="var(--red)"/>
+                  <text x="32" y="40.5" font-size="7" fill="#fff" font-family="'Plus Jakarta Sans',sans-serif" font-weight="700" text-anchor="middle">CEK STATUS</text>
+                  <path d="M46 40 L54 48 M54 48 L54 41 M54 48 L47 48" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Garis vertikal penghubung ke langkah berikutnya -->
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Buka situs</h4>
+              <p>Cari <b>beasiswa.kedirikab.go.id</b> di Google, lalu pilih hasil pencarian yang muncul paling atas.</p>
+              <img src="alur/cek status/WhatsApp Image 2026-08-21 at 10.56.42.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 2: Buka Situs Resmi -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">2</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="12" y="6" width="34" height="46" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.4"/>
+                  <rect x="18" y="15" width="22" height="3" rx="1.5" fill="rgba(27,28,70,0.2)"/>
+                  <rect x="18" y="22" width="22" height="3" rx="1.5" fill="rgba(27,28,70,0.2)"/>
+                  <path d="M40 34 L54 20 L59 25 L45 39 L38 41 Z" fill="var(--gold)" stroke="var(--navy-deep)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Buka Situs Resmi</h4>
+              <p>Setelah situs resmi terbuka, ketuk <b>ikon menu (☰)</b> di pojok kanan atas layar.</p>
+              <img src="alur/pendaftara/WhatsApp Image 2026-08-31 at 13.37.19.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 3: Pilih Menu Pendaftaran -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">3</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="26" cy="26" r="16" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M37 37 L52 52" stroke="var(--navy-deep)" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M20 26 L24 30 L33 20" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Pilih Menu Pendaftaran</h4>
+              <p>Pilih menu <b>"Pendaftaran"</b> pada daftar menu yang muncul untuk melanjutkan ke halaman cek status.</p>
+              <img src="alur/cek status/WhatsApp Image 2026-08-31 at 13.41.29.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 4: Masukkan Nomor Pendaftaran -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">4</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="10" y="8" width="44" height="48" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M18 20h28M18 28h28M18 36h18" stroke="var(--navy-deep)" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="44" cy="42" r="9" fill="var(--gold)"/>
+                  <path d="M40 42 L43 45 L48 39" stroke="var(--navy-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Masukkan Nomor Pendaftaran</h4>
+              <p>Masukkan <b>nomor pendaftaran</b> Anda pada kolom yang tersedia, lalu ketuk tombol pencarian <b>berwarna hijau</b>.</p>
+              <img src="alur/cek status/WhatsApp Image 2026-08-21 at 13.34.25.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+          <!-- Langkah 5: Lihat Status Pendaftaran -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">5</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="26" cy="26" r="16" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M37 37 L52 52" stroke="var(--navy-deep)" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M20 26 L24 30 L33 20" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="fline"></div>
+            </div>
+            <div class="fcontent">
+              <h4>Lihat Status Pendaftaran</h4>
+              <p>Scroll layar ke bawah, status pendaftaran Anda — seperti <b>Berkas Telah Diterima atau Data Telah Terverifikasi</b> — akan langsung ditampilkan.</p>
+              <div class="container-gambar">
+                <img src="alur/cek status/WhatsApp Image 2026-08-21 at 10.56.46.jpeg" class="fscreenshot">
+                <img src="alur/cek status/WhatsApp Image 2026-08-31 at 13.53.42.jpeg" class="fscreenshot">
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 6: Selesai -->
+          <div class="flow-step">
+            <div class="ficon-col">
+              <div class="ficon">
+                <div class="fnum">6</div>
+                <svg viewBox="0 0 64 64" fill="none">
+                  <rect x="10" y="8" width="44" height="48" rx="5" fill="none" stroke="var(--navy-deep)" stroke-width="2.5"/>
+                  <path d="M18 20h28M18 28h28M18 36h18" stroke="var(--navy-deep)" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="44" cy="42" r="9" fill="var(--gold)"/>
+                  <path d="M40 42 L43 45 L48 39" stroke="var(--navy-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Langkah terakhir dalam grup "Alur Cek Status" -->
+            </div>
+            <div class="fcontent">
+              <h4>Selesai</h4>
+              <p>Jika sudah selesai memeriksa status, ketuk tombol <b>"Kembali ke Beranda"</b> untuk keluar dari halaman ini.</p>
+              <img src="alur/cek status/WhatsApp Image 2026-08-24 at 08.47.06.jpeg" class="fscreenshot">
+            </div>
+          </div>
+
+        </div><!-- /.flow (alur cek status) -->
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. SECTION "JENIS" (Jenis & Syarat Beasiswa)
+         Struktur data di sini bertingkat dua:
+           - Tab KATEGORI  (id="kategoriTabs")  -> menampilkan .cat-panel
+           - Tab JENJANG   (id="jenjangTabs")   -> hanya ada di dalam
+             kategori "Beasiswa Berdaya" (cat-berdaya), menampilkan .jpanel
+         script.js membaca atribut data-cat dan data-jp untuk tahu
+         panel mana yang harus ditampilkan saat tab diklik.
+    ===================================================================== -->
+    <section class="page" id="jenis">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Beasiswa Berbudaya Kabupaten Kediri</span>
+          <h2>Jenis &amp; Syarat Beasiswa</h2>
+        </div>
+
+        <div class="requirements-content-container">
+          <div class="requirements-content-heading">
+            <span class="eyebrow"></span>
+            <h3>PILIHAN KATEGORI</h3>
+            <p>Pilih kategori beasiswa terlebih dahulu. Khusus <b>Beasiswa Berdaya</b>, lanjutkan dengan memilih jenjang pendidikan untuk melihat syarat lengkap beserta contoh format surat pendukung.</p>
+          </div>
+
+          <!-- ---------- 4.1 Tab Kategori (4 kategori beasiswa) ---------- -->
+          <!-- data-cat harus sama persis dengan id .cat-panel di bawah (id="cat-...") -->
+          <div class="jenjang-tabs" id="kategoriTabs">
+          <button class="jchip category-card active" data-cat="berdaya">
+            <span class="category-icon icon-purple" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M7 27 32 15l25 12-25 12L7 27Z"/><path d="M15 35v9c10 6 24 6 34 0v-9M53 27v18"/><path d="M50 45h6v7M14 53h36"/><path d="M22 37h20"/></svg>
+            </span>
+            <span>Beasiswa<br>Berdaya</span>
+          </button>
+          <button class="jchip category-card" data-cat="bandara">
+            <span class="category-icon icon-blue" aria-hidden="true"><img src="beasiswa-sambut-bandara-hitam.png" alt=""></span>
+            <span>Beasiswa <br>Sambut Bandara</span>
+          </button>
+          <button class="jchip category-card" data-cat="kapal">
+            <span class="category-icon icon-green" aria-hidden="true"><img src="beasiswa-kapal-pesiar-hitam.png" alt=""></span>
+            <span>Beasiswa <br>Kapal Pesiar</span>
+          </button>
+          <button class="jchip category-card" data-cat="bakti">
+            <span class="category-icon icon-orange" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M18 12v15c0 8 6 14 14 14s14-6 14-14V12M18 12h8M38 12h8M32 41v8c0 4-3 7-7 7h-3"/><circle cx="19" cy="56" r="4"/><path d="M43 22h12M49 16v12"/></svg>
+            </span>
+            <span>Beasiswa <br>Merdeka Bhakta</span>
+          </button>
+          </div>
+
+        <!-- ---------- 4.2 Panel Kategori: BEASISWA BERDAYA ---------- -->
+        <!-- Kategori ini satu-satunya yang punya sub-tab "Jenjang" -->
+        <div class="cat-panel active" id="cat-berdaya">
+
+          <!-- Tab jenjang pendidikan (khusus kategori Berdaya) -->
+          <!-- data-jp harus sama persis dengan id .jpanel di bawah (id="jp-...") -->
+          <div class="jenjang-card" id="jenjangTabs" style="margin-top:6px;">
+            <p class="jenjang-title"><span class="bar"></span>JENJANG</p>
+            <div class="jenjang-options" id="jenjangOptions">
+              <button class="pill active" data-value="guru-paud" data-jp="paud">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+                Guru PAUD
+              </button>
+              <button class="pill" data-value="sd-mi" data-jp="sd">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7Z"/></svg>
+                SD/MI
+              </button>
+              <button class="pill" data-value="smp-mts" data-jp="smp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7Z"/></svg>
+                SMP/MTs
+              </button>
+              <button class="pill" data-value="sma-smk-ma" data-jp="sma">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7Z"/></svg>
+                SMA/SMK/MA
+              </button>
+              <button class="pill" data-value="mahasiswa" data-jp="mhsbaru">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+                Mahasiswa
+              </button>
+            </div>
+          </div>
+
+          <div class="requirements-guide" role="note">
+            <div class="guide-icon" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M27 5h10l2 7a21 21 0 0 1 5 2l6-4 7 7-4 6a21 21 0 0 1 2 5l7 2v10l-7 2a21 21 0 0 1-2 5l4 6-7 7-6-4a21 21 0 0 1-5 2l-2 7H27l-2-7a21 21 0 0 1-5-2l-6 4-7-7 4-6a21 21 0 0 1-2-5l-7-2V30l7-2a21 21 0 0 1 2-5l-4-6 7-7 6 4a21 21 0 0 1 5-2l2-7Z"/><circle cx="32" cy="32" r="13"/><path d="M28.5 28a3.7 3.7 0 1 1 6.4 2.5c-1.6 1.6-2.9 2.1-2.9 4.5M32 40v.2"/></svg></div>
+            <div>
+              <strong>Cara memakai halaman ini</strong>
+              <p>Pilih kategori, lalu pilih jenjang jika tersedia. Dokumen dengan ikon <svg class="document-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.75h8l4 4V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.75a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5M8 13h8M8 17h8"/></svg> dapat diklik untuk melihat contoh surat atau berkas yang formatnya sudah sesuai, lalu tekan tombol <b>Unduh</b> pada dokumen tersebut.</p>
+            </div>
+          </div>
+
+          <!-- ===== Jenjang: Guru PAUD ===== -->
+          <div class="jpanel active" id="jp-paud">
+            <div class="jpanel-grid">
+
+              <!-- Daftar syarat dokumen -->
+              <div class="syarat-card">
+                <span class="tag">Jenjang . Guru PAUD</span>
+                <h4>Syarat Pengajuan Beasiswa Guru PAUD</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div>
+                  <div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div>
+                  <div class="req-body"><p>Guru Tetap Yayasan (GTY) dan/atau Guru Honorer yang aktif mengajar pada satuan pendidikan PAUD yang memiliki izin operasional</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div>
+                  <div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div>
+                  <div class="req-body"><p>Berkas persyaratan disusun sesuai urutan lampiran</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div>
+                  <div class="req-body"><p>Tercatat Pelajar atau Mahasiswa Aktif</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">6</div>
+                  <div class="req-body"><p>Bagi Guru PAUD yang Sudah Mendapatkan Bantuan Sosial Pendidikan dari Lembaga GNOTA tidak bisa mengajukan beasiswa</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">7</div>
+                  <div class="req-body"><p>Menempuh Pendidikan Sarjana (S1)</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">8</div>
+                  <div class="req-body"><p>Tidak berstatus Pegawai Negeri Sipil (Suami / kepala keluarga)</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">9</div>
+                  <div class="req-body"><p>Berkas Persyaratan di susun sesuai urutan lampiran dan di kumpulkan ke kantor beasiswa (GNOTA) Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+
+
+                  <div class="req-item"><div class="req-number">1</div>
+                  <div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+
+                  <div class="req-item"><div class="req-number">2</div>
+                  <div class="req-body"><p>Surat keterangan masih aktif sebagai pengajar dari Lembaga PAUD tempat guru yang bersangkutan mengajar</p></div></div>
+
+                  <div class="req-item"><div class="req-number">3</div>
+                  <div class="req-body"><p>Surat keterangan masih aktif sebagai mahasiswa dari Universitas/Perguruan Tinggi</p></div></div>
+
+                  <div class="req-item"><div class="req-number">4</div>
+                  <div class="req-body"><p>Fotokopi Kartu Hasil Studi mulai semester 1</p></div></div>
+
+                  <div class="req-item"><div class="req-number">5</div>
+                  <div class="req-body"><p>Fotokopi ijazah terakhir (1 lembar)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">6</div>
+                  <div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP) pemohon/surat keterangan pembuatan KTP (1 lembar)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">7</div>
+                  <div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">8</div>
+                  <div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">9</div>
+                  <div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token tahun ini. Jika belum memiliki listrik/menyalur, harap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran</p></div></div>
+
+                  <div class="req-item"><div class="req-number">10</div>
+                  <div class="req-body"><p>Fotokopi  Pajak Bumi dan Bangunan (PBB) tahun ini atau kemarin</p></div></div>
+
+                  <div class="req-item"><div class="req-number">11</div>
+                  <div class="req-body"><p>Foto rumah (tampak depan)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">12</div>
+                  <div class="req-body"><p>Denah lokasi rumah dan lokasi balai desa. Denah digambar secara manual dari jalan utama ke rumah</p></div></div>
+
+                  <div class="req-item"><div class="req-number">13</div>
+                  <div class="req-body"><p>Melampirkan bukti pendaftaran berupa print out nomor pendaftaran pada website beasiswa.kedirikab.go.id (ditempel di sampul map depan)</p></div></div>
+
+                  <div class="req-item"><div class="req-number">14</div>
+                  <div class="req-body"><p>Dimasukkan ke dalam map buffalo warna merah (ditulis nama, nomor HP, alamat, dan nama Perguruan Tinggi di bawah nomor pendaftaran)</p></div></div>
+
+                  
+                </div>
+                <div class="map-note">📁 Seluruh berkas disusun rapi dan diserahkan sesuai instruksi pada saat pendaftaran.</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== Jenjang: SD/MI ===== -->
+          <div class="jpanel" id="jp-sd">
+            <div class="jpanel-grid">
+              <div class="syarat-card">
+                <span class="tag">Jenjang . SD/MI</span>
+                <h4>Syarat Pengajuan Beasiswa SD/MI</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Pelajar di Pendidikan Formal</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Tidak menerima Bantuan Sosial Pendidikan dari sumber lain</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Tercatat sebagai peserta didik aktif</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa: Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Surat Pernyataan tidak menerima Beasiswa dari sumber lain yang ditandatangani oleh pemohon</p></div></div>
+                  <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP) kedua orang tua (1 lembar)</p></div></div>
+                  <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar)</p></div></div>
+                  <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Siswa kelas I: Surat Keterangan Diterima dari sekolah tujuan (asli). <br> Siswa kelas II, III, IV, V, dan VI: Surat Keterangan Aktif dari sekolah (asli).</p></div></div>
+                  <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli)</p></div></div>
+                  <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token tahun 2026. Jika belum memiliki listrik/menyalur, harap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran</p></div></div>
+                  <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Foto rumah tampak depan</p></div></div>
+                  <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (nomor WhatsApp)</p></div></div>
+                  <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa print out nomor pendaftaran pada website beasiswa.kedirikab.go.id (ditempel di sampul map depan)</p></div></div>
+                  <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Dimasukkan map warna kuning (ditulis nomor HP, nama sekolah, dan kelas di bawah nomor pendaftaran)</p></div></div>
+                </div>
+                <div class="map-note">📁 Berkas dikumpulkan ke sekolah asal / ruang Bimbingan Konseling sebelum batas waktu yang ditentukan.</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== Jenjang: SMP/MTs ===== -->
+          <div class="jpanel" id="jp-smp">
+            <div class="jpanel-grid">
+              <div class="syarat-card">
+                <span class="tag">Jenjang . SMP/MTs</span>
+                <h4>Syarat Pengajuan Beasiswa SMP/MTs</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Pelajar di Pendidikan Formal</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Tidak menerima Bantuan Sosial Pendidikan dari sumber lain</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Tercatat sebagai peserta didik aktif</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa: Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+                  <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Surat Pernyataan tidak menerima Beasiswa dari sumber lain yang ditandatangani oleh pemohon.</p></div></div>
+                  <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Tanda Pendudukan (KTP) kedua orang tua (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">5</div><div class="req-body"><p><b>A. Siswa Kelas VII</b></p><ul><li>Fotokopi ijazah/SKL</li><li>Surat Keterangan Diterima dari sekolah tujuan (asli)</li></ul><p><b>B. Siswa Kelas VIII dan IX</b></p><ul><li>Surat Keterangan Aktif dari sekolah (asli)</li></ul></div></div>
+                  <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut digunakan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli).</p></div></div>
+                  <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token Tahun 2026 (jika belum punya listrik/menyalur diharap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran).</p></div></div>
+                  <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Foto rumah tampak depan.</p></div></div>
+                  <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                  <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa <i>print out nomor pendaftaran</i> pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                  <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Dimasukkan map warna <b>KUNING</b> (ditulis No. HP, nama sekolah, dan kelas di bawah nomor pendaftaran).</p></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== Jenjang: SMA/SMK/MA ===== -->
+          <div class="jpanel" id="jp-sma">
+            <div class="jpanel-grid">
+              <div class="syarat-card">
+                <span class="tag">Jenjang . SMA/SMK/MA</span>
+                <h4>Syarat Pengajuan Beasiswa SMA/SMK/MA</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Pelajar di Pendidikan Formal</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Tidak menerima Bantuan Sosial Pendidikan dari sumber lain</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Tercatat Peserta didik Aktif</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Berkas Persyaratan di susun sesuai urutan lampiran dan di kumpulkan ke kantor beasiswa: Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Surat Pernyataan tidak menerima Beasiswa dari sumber lain yang ditandatangani oleh pemohon</p></div></div>
+                  <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP) kedua orang tua (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">5</div><div class="req-body"><p><b>A. Siswa Kelas X</b></p><ul><li>Fotokopi ijazah/SKL.</li><li>Surat Keterangan Diterima dari sekolah tujuan (asli).</li></ul><p><b>B. Siswa Kelas XI dan XII</b></p><ul><li>Surat Keterangan Aktif dari sekolah (asli).</li></ul></div></div>
+                  <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli).</p></div></div>
+                  <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token Tahun 2026 (jika belum punya listrik/menyalur diharap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran).</p></div></div>
+                  <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Foto rumah tampak depan.</p></div></div>
+                  <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                  <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa <i>print out nomor pendaftaran</i> pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                  <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Dimasukkan map warna <b>BIRU</b> (ditulis No. HP, nama sekolah, dan kelas di bawah nomor pendaftaran).</p></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ===== Jenjang: Mahasiswa Baru S1/D4/D3 ===== -->
+          <div class="jpanel" id="jp-mhsbaru">
+            <div class="jpanel-grid">
+              <div class="syarat-card">
+                <span class="tag">Jenjang . Mahasiswa</span>
+                <h4>Syarat Pengajuan Beasiswa Mahasiswa (Berdaya)</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Mahasiswa penerima beasiswa belum pernah menikah</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Tidak Sekolah Di Kedinasan</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>IPK minimal 3,0 untuk mahasiswa <i>on going</i> (Mahasiswa aktif semester 2–7)</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Tidak menerima Bantuan Sosial Pendidikan dari sumber lain</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Tercatat sebagai mahasiswa aktif</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">8</div><div class="req-body"><p>Berkas Persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa (GNOTA): Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                  <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+                  <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Surat Pernyataan tidak menerima Beasiswa dari sumber lain yang ditandatangani oleh pemohon.</p></div></div>
+                  <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>FotokopiKartu Tanda Penduduk (KTP)  kedua orang tua (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi KTP pemohon/surat keterangan pembuatan Kartu Tanda Penduduk (KTP)  (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Fotokopi ijazah/SKL (1 lembar).</p></div></div>
+                  <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Surat Keterangan Diterima di Perguruan Tinggi/print out bukti penerimaan (bagi mahasiswa yang baru diterima) (asli).</p></div></div>
+                  <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Fotokopi KHS semester 1 s.d. semester terakhir (bagi mahasiswa yang sudah aktif di semester 2 s.d. 7).</p></div></div>
+                  <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Print out bukti yang menunjukkan bahwa mahasiswa aktif di perguruan tinggi dari <a href="https://pddikti.kemdiktisaintek.go.id" target="_blank" rel="noopener">pddikti.kemdiktisaintek.go.id</a> (bagi mahasiswa yang sudah aktif di semester 2 s.d. 7).</p></div></div>
+                  <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli).</p></div></div>
+                  <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Surat pernyataan belum menikah yang diketahui kepala desa/lurah.</p></div></div>
+                  <div class="req-item"><div class="req-number">12</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token tahun 2026 (jika belum punya listrik/menyalur diharap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran).</p></div></div>
+                  <div class="req-item"><div class="req-number">13</div><div class="req-body"><p>Fotokopi PBB (Pajak Bumi Bangunan) tahun 2025/2026.</p></div></div>
+                  <div class="req-item"><div class="req-number">14</div><div class="req-body"><p>Foto rumah tampak depan.</p></div></div>
+                  <div class="req-item"><div class="req-number">15</div><div class="req-body"><p>Denah lokasi rumah dan menyertakan lokasi balai desa (digambar secara manual dari jalan utama ke rumah).</p></div></div>
+                  <div class="req-item"><div class="req-number">16</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                  <div class="req-item"><div class="req-number">17</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa <i>print out nomor pendaftaran</i> pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                  <div class="req-item"><div class="req-number">18</div><div class="req-body"><p>Dimasukkan map warna <b>MERAH</b> (No. HP dan nama Perguruan Tinggi ditulis di bawah nomor pendaftaran).</p></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!--
+            ===== Jenjang: Mahasiswa On-Going =====
+            CATATAN: panel ini tidak punya tombol tab (tidak ada
+            data-jp="mhson" di daftar tab jenjang di atas), jadi saat
+            ini hanya bisa diakses lewat kode/URL langsung, bukan klik
+            tab biasa. Dibiarkan seperti aslinya, tidak diubah.
+          -->
+          <div class="jpanel" id="jp-mhson">
+            <div class="jpanel-grid">
+              <div class="syarat-card">
+                <span class="tag">Jenjang . Mahasiswa</span>
+                <h4>Syarat Pengajuan Beasiswa Mahasiswa Aktif</h4>
+                <div class="req-list">
+                  <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Calon penerima berstatus mahasiswa aktif dan masih terdaftar di perguruan tinggi</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Berkas persyaratan disusun sesuai urutan lampiran</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Tidak menerima beasiswa atau bantuan pendidikan lain pada periode yang sama</p></div></div>
+                  <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Data akademik calon penerima dapat diverifikasi oleh perguruan tinggi</p></div></div>
+                  <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Fotokopi KTP mahasiswa</p></div></div>
+                  <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Fotokopi Kartu Tanda Mahasiswa (KTM)</p></div></div>
+                  <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) dan KTP orang tua/wali</p></div></div>
+                  <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kecamatan</p></div></div>
+                  <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Fotokopi rekening listrik 3 bulan terakhir</p></div></div>
+                  <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Transkrip nilai semester terakhir</p></div></div>
+                  <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Surat keterangan aktif kuliah dari kampus</p></div></div>
+                  <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Bukti status mahasiswa aktif</p></div></div>
+                  <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Print out bukti nomor pendaftaran dari situs resmi</p></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /#cat-berdaya -->
+
+        <!-- ---------- 4.3 Panel Kategori: BEASISWA BAKTI (tanpa jenjang) ---------- -->
+        <div class="cat-panel" id="cat-bakti">
+          <div class="requirements-guide" role="note">
+            <div class="guide-icon" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M27 5h10l2 7a21 21 0 0 1 5 2l6-4 7 7-4 6a21 21 0 0 1 2 5l7 2v10l-7 2a21 21 0 0 1-2 5l4 6-7 7-6-4a21 21 0 0 1-5 2l-2 7H27l-2-7a21 21 0 0 1-5-2l-6 4-7-7 4-6a21 21 0 0 1-2-5l-7-2V30l7-2a21 21 0 0 1 2-5l-4-6 7-7 6 4a21 21 0 0 1 5-2l2-7Z"/><circle cx="32" cy="32" r="13"/><path d="M28.5 28a3.7 3.7 0 1 1 6.4 2.5c-1.6 1.6-2.9 2.1-2.9 4.5M32 40v.2"/></svg></div>
+            <div>
+              <strong>Cara memakai halaman ini</strong>
+              <p>Pilih kategori, lalu pilih jenjang jika tersedia. Dokumen dengan ikon <svg class="document-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.75h8l4 4V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.75a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5M8 13h8M8 17h8"/></svg> dapat diklik untuk melihat contoh surat atau berkas yang formatnya sudah sesuai, lalu tekan tombol <b>Unduh</b> pada dokumen tersebut.</p>
+            </div>
+          </div>
+          <div class="jpanel-grid">
+            <div class="syarat-card">
+              <span class="tag">Kategori · Tanpa Jenjang</span>
+              <h4>Syarat Pengajuan Beasiswa Bhakta</h4>
+              <div class="req-list">
+                <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Warga masyarakat kurang mampu/miskin</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Bukan penerima Bantuan Pendidikan Pemerintah Kabupaten Kediri (GNOTA) tahun 2025</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Lulusan SMA/SMK/MA sederajat tahun 2024 s.d. 2026</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Nilai rata-rata rapor semester 1 s.d. 5 minimal 8,0</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Tinggi badan untuk program studi S1 Keperawatan, S1 Kebidanan, dan D3 Fisioterapi minimal:<br>a. Perempuan: 150 cm<br>b. Laki-laki: 155 cm</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">8</div><div class="req-body"><p>Berkas persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa: Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+                <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  kedua orang tua (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  pemohon/surat keterangan pembuatan KTP (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Fotokopi nilai rapor semester 1 s.d. 5 (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Fotokopi ijazah (bagi lulusan 2024/2025) (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Foto warna ukuran 4×6 background biru (1 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Surat Keterangan Sehat (secara umum).</p></div></div>
+                <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Surat Keterangan Buta Warna (secara khusus).</p></div></div>
+                <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Foto rumah tampak depan.</p></div></div>
+                <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                <div class="req-item"><div class="req-number">12</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa print out nomor pendaftaran pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                <div class="req-item"><div class="req-number">13</div><div class="req-body"><p>Dimasukkan map warna <b>MERAH</b>.</p></div></div>
+              </div>
+              <div class="map-note">ℹ️ Kategori ini tidak memiliki pilihan jenjang — berkas berlaku umum untuk seluruh pendaftar. Dokumen tambahan spesifik dapat dikonfirmasi langsung ke kantor GNOTA.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ---------- 4.4 Panel Kategori: BEASISWA KAPAL PESIAR (tanpa jenjang) ---------- -->
+        <div class="cat-panel" id="cat-kapal">
+          <div class="requirements-guide" role="note">
+            <div class="guide-icon" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M27 5h10l2 7a21 21 0 0 1 5 2l6-4 7 7-4 6a21 21 0 0 1 2 5l7 2v10l-7 2a21 21 0 0 1-2 5l4 6-7 7-6-4a21 21 0 0 1-5 2l-2 7H27l-2-7a21 21 0 0 1-5-2l-6 4-7-7 4-6a21 21 0 0 1-2-5l-7-2V30l7-2a21 21 0 0 1 2-5l-4-6 7-7 6 4a21 21 0 0 1 5-2l2-7Z"/><circle cx="32" cy="32" r="13"/><path d="M28.5 28a3.7 3.7 0 1 1 6.4 2.5c-1.6 1.6-2.9 2.1-2.9 4.5M32 40v.2"/></svg></div>
+            <div>
+              <strong>Cara memakai halaman ini</strong>
+              <p>Pilih kategori, lalu pilih jenjang jika tersedia. Dokumen dengan ikon <svg class="document-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.75h8l4 4V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.75a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5M8 13h8M8 17h8"/></svg> dapat diklik untuk melihat contoh surat atau berkas yang formatnya sudah sesuai, lalu tekan tombol <b>Unduh</b> pada dokumen tersebut.</p>
+            </div>
+          </div>
+          <div class="jpanel-grid">
+            <div class="syarat-card">
+              <span class="tag">Kategori · Tanpa Jenjang</span>
+              <h4>Syarat Pengajuan Beasiswa Kapal Pesiar</h4>
+              <div class="req-list">
+                <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Warga masyarakat kurang mampu/miskin</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Bukan penerima Bantuan Pendidikan Pemerintah Kabupaten Kediri (GNOTA) tahun 2025</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Lulusan tingkat SMA/MA/SMK atau lulusan Paket C</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Belum menikah</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Usia minimal 19 tahun dan maksimal 25 tahun</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">8</div><div class="req-body"><p>Tinggi badan minimal pria: 160 cm dan tinggi badan wanita: 155 cm</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">9</div><div class="req-body"><p>Sehat jasmani dan rohani, tidak buta warna, tidak bertato, tidak memiliki riwayat penyakit hepatitis, tidak mempunyai penyakit patah tulang dan mata tidak juling</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">10</div><div class="req-body"><p>Siap mengikuti pendidikan dan pelatihan selama 1 tahun</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">11</div><div class="req-body"><p>Berkas persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa (GNOTA): Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+                <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  kedua orang tua (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi akta kelahiran (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  pemohon/surat keterangan pembuatan KTP (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Fotokopi ijazah/SKL terakhir (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Foto warna ukuran 3×4 dengan background biru (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli).</p></div></div>
+                <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token Tahun 2026 (jika belum punya listrik/menyalur diharap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran).</p></div></div>
+                <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Fotokopi PBB (Pajak Bumi Bangunan) tahun 2025/2026.</p></div></div>
+                <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Foto rumah tampak depan.</p></div></div>
+                <div class="req-item"><div class="req-number">12</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                <div class="req-item"><div class="req-number">13</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa print out nomor pendaftaran pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                <div class="req-item"><div class="req-number">14</div><div class="req-body"><p>Dimasukkan map plastik kancing warna <b>BIRU</b>.</p></div></div>
+              </div>
+              <div class="map-note">ℹ️ Kategori ini tidak memiliki pilihan jenjang. Persyaratan spesifik lembaga pelatihan dapat dikonfirmasi langsung ke kantor GNOTA.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ---------- 4.5 Panel Kategori: BEASISWA SAMBUT BANDARA (tanpa jenjang) ---------- -->
+        <div class="cat-panel" id="cat-bandara">
+          <div class="requirements-guide" role="note">
+            <div class="guide-icon" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M27 5h10l2 7a21 21 0 0 1 5 2l6-4 7 7-4 6a21 21 0 0 1 2 5l7 2v10l-7 2a21 21 0 0 1-2 5l4 6-7 7-6-4a21 21 0 0 1-5 2l-2 7H27l-2-7a21 21 0 0 1-5-2l-6 4-7-7 4-6a21 21 0 0 1-2-5l-7-2V30l7-2a21 21 0 0 1 2-5l-4-6 7-7 6 4a21 21 0 0 1 5-2l2-7Z"/><circle cx="32" cy="32" r="13"/><path d="M28.5 28a3.7 3.7 0 1 1 6.4 2.5c-1.6 1.6-2.9 2.1-2.9 4.5M32 40v.2"/></svg></div>
+            <div>
+              <strong>Cara memakai halaman ini</strong>
+              <p>Pilih kategori, lalu pilih jenjang jika tersedia. Dokumen dengan ikon <svg class="document-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.75h8l4 4V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.75a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5M8 13h8M8 17h8"/></svg> dapat diklik untuk melihat contoh surat atau berkas yang formatnya sudah sesuai, lalu tekan tombol <b>Unduh</b> pada dokumen tersebut.</p>
+            </div>
+          </div>
+          <div class="jpanel-grid">
+            <div class="syarat-card">
+              <span class="tag">Kategori · Tanpa Jenjang</span>
+              <h4>Syarat Pengajuan Beasiswa Sambut Bandara</h4>
+              <div class="req-list">
+                <div class="req-item" data-requirement="general"><div class="req-number">1</div><div class="req-body"><p>Warga Kabupaten Kediri</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">2</div><div class="req-body"><p>Warga masyarakat kurang mampu/miskin</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">3</div><div class="req-body"><p>Pengajuan hanya diperbolehkan mendaftarkan satu pemohon dalam 1 (satu) Kartu Keluarga</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">4</div><div class="req-body"><p>Bukan penerima Bantuan Pendidikan Pemerintah Kabupaten Kediri (GNOTA) tahun 2025</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">5</div><div class="req-body"><p>Lulusan tingkat SMA/MA/SMK dan lulusan Paket C</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">6</div><div class="req-body"><p>Belum menikah</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">7</div><div class="req-body"><p>Usia maksimal 25 tahun</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">8</div><div class="req-body"><p>Tinggi badan minimal pria: 168 cm dan tinggi badan wanita: 160 cm</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">9</div><div class="req-body"><p>Berat badan proporsional</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">10</div><div class="req-body"><p>Good looking</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">11</div><div class="req-body"><p>Sehat jasmani dan rohani, tidak buta warna</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">12</div><div class="req-body"><p>Siap mengikuti pendidikan dan pelatihan selama 6 bulan di Surabaya</p></div></div>
+              <div class="req-item" data-requirement="general"><div class="req-number">13</div><div class="req-body"><p>Berkas persyaratan disusun sesuai urutan lampiran dan dikumpulkan ke kantor beasiswa (GNOTA): Jl. Letjend Suprapto No. 42 Burengan Kediri</p></div></div>
+                <div class="req-item"><div class="req-number">1</div><div class="req-body"><p>Surat Permohonan Beasiswa yang ditujukan kepada Bupati Kediri melalui Dinas Pendidikan Kabupaten Kediri.</p></div></div>
+                <div class="req-item"><div class="req-number">2</div><div class="req-body"><p>Fotokopi sertifikat pendukung (bahasa Inggris), apabila ada.</p></div></div>
+                <div class="req-item"><div class="req-number">3</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  kedua orang tua (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">4</div><div class="req-body"><p>Fotokopi Kartu Tanda Penduduk (KTP)  pemohon/surat keterangan pembuatan KTP (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">5</div><div class="req-body"><p>Fotokopi Kartu Keluarga (KK) (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">6</div><div class="req-body"><p>Fotokopi ijazah/SKL terakhir (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">7</div><div class="req-body"><p>Foto warna satu badan penuh ukuran 3R (2 lembar).</p></div></div>
+                <div class="req-item"><div class="req-number">8</div><div class="req-body"><p>Surat Keterangan Tidak Mampu (SKTM) dari desa/kelurahan, yang menyebutkan tingkatan desil dalam Data Tunggal Sosial dan Ekonomi Nasional (DTSEN). Surat keterangan tersebut berisikan untuk persyaratan pengajuan Beasiswa di Kabupaten Kediri (asli).</p></div></div>
+                <div class="req-item"><div class="req-number">9</div><div class="req-body"><p>Fotokopi rekening pembayaran listrik 2 bulan atau bukti pembelian token tahun 2026 (jika belum punya listrik/menyalur diharap melampirkan surat keterangan yang diketahui RT setempat dengan menyebutkan nominal pembayaran listrik serta nama pemilik meteran).</p></div></div>
+                <div class="req-item"><div class="req-number">10</div><div class="req-body"><p>Fotokopi PBB (Pajak Bumi Bangunan) tahun 2025/2026.</p></div></div>
+                <div class="req-item"><div class="req-number">11</div><div class="req-body"><p>Foto rumah (tampak depan).</p></div></div>
+                <div class="req-item"><div class="req-number">12</div><div class="req-body"><p>Nomor HP yang masih aktif dan bisa dihubungi (No. WhatsApp).</p></div></div>
+                <div class="req-item"><div class="req-number">13</div><div class="req-body"><p>Melampirkan bukti pendaftaran berupa print out nomor pendaftaran pada website: <a href="https://beasiswa.kedirikab.go.id" target="_blank" rel="noopener">beasiswa.kedirikab.go.id</a> (ditempel di sampul map depan).</p></div></div>
+                <div class="req-item"><div class="req-number">14</div><div class="req-body"><p>Dimasukkan map plastik kancing warna <b>MERAH</b>.</p></div></div>
+              </div>
+              <div class="map-note">ℹ️ Kategori ini tidak memiliki pilihan jenjang. Persyaratan spesifik program dapat dikonfirmasi langsung ke kantor GNOTA.</div>
+            </div>
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. SECTION "JADWAL" (Jadwal Pelaksanaan)
+         Berisi 3 kartu:
+           a) Jadwal Pendaftaran (kolom kiri, per gelombang)
+           b) Jadwal Pelayanan (tabel jam operasional kantor)
+           c) Ringkasan mini alur Beasiswa Berdaya
+    ===================================================================== -->
+    <section class="page" id="jadwal">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Jadwal Pelaksanaan</span>
+          <h2>Setiap gelombang, waktunya berbeda.</h2>
+          <p>Pendaftaran dibuka bertahap per gelombang dan per kategori beasiswa. <br> Pastikan mendaftar dalam rentang tanggal yang berlaku. </br> </p>
+        </div>
+
+        <div class="jadwal-grid">
+
+          <!-- ---------- 5.1 Kartu Jadwal Pendaftaran ---------- -->
+          <div class="jcard">
+            <div class="jcard-head">Jadwal Pendaftaran</div>
+            <div class="jcard-body">
+
+              <div class="jgroup-title">Gelombang I</div>
+              <div class="jrow"><span>Pendaftaran Beasiswa Bakti</span><b>31 Jan 2026 – 20 Feb 2026</b></div>
+              <div class="jrow"><span>Pendaftaran Mahasiswa Jenjang S1/D4/D3</span><b>04 Mei 2026 – 18 Mei 2026</b></div>
+              <div class="jrow"><span>Pendaftaran Guru PAUD</span><b>04 Mei 2026 – 18 Mei 2026</b></div>
+
+              <div class="jgroup-title">Gelombang II</div>
+              <div class="jrow"><span>Pendaftaran Mahasiswa Jenjang S1/D4/D3</span><b>01 Jul 2026 – 08 Jul 2026</b></div>
+              <div class="jrow"><span>Pendaftaran Guru PAUD</span><b>01 Jul 2026 – 08 Jul 2026</b></div>
+
+              <div class="jgroup-title">Pendaftaran Beasiswa Lainnya</div>
+              <div class="jrow"><span>Pendaftaran Beasiswa Kapal Pesiar</span><b>13 Apr 2026 – 25 Apr 2026</b></div>
+              <div class="jrow"><span>Pendaftaran Beasiswa Sambut Bandara</span><b>13 Apr 2026 – 25 Apr 2026</b></div>
+              <div class="jrow"><span>Pendaftaran SD/MI</span><b>14 Jul 2026 – 17 Jul 2026</b></div>
+              <div class="jrow"><span>Pendaftaran SMP/MTs</span><b>22 Jul 2026 – 27 Jul 2026</b></div>
+              <!-- class "last" biasanya dipakai CSS untuk menghilangkan garis
+                   pembatas bawah pada baris terakhir -->
+              <div class="jrow last"><span>Pendaftaran SMA/SMK/MA</span><b>22 Jul 2026 – 27 Jul 2026</b></div>
+
+            </div>
+          </div>
+
+          <!-- ---------- 5.2 Kolom kanan: Jadwal Pelayanan + Mini Alur ---------- -->
+          <div class="jright">
+
+            <!-- Kartu jam operasional kantor -->
+            <div class="jcard">
+              <div class="jcard-head">Jadwal Pelayanan</div>
+              <div class="jcard-body">
+                <table class="pelayanan-table">
+                  <thead>
+                    <tr><th>Jadwal</th><th>Waktu</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Senin – Kamis</td><td>08.00 s/d 13.00</td></tr>
+                    <tr><td>Jumat</td><td>08.00 s/d 11.00</td></tr>
+                    <tr><td>Sabtu – Minggu</td><td class="tutup">Tutup</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Kartu ringkasan mini alur (4 tahap) -->
+            <div class="jcard" style="margin-top:24px;">
+              <div class="jcard-head">Alur Beasiswa Pendidikan Berdaya</div>
+              <div class="jcard-body">
+                <p class="jalur-lead">
+                  Berikut alur singkat proses pendaftaran hingga pengumuman.
+                  Lihat detail lengkap di halaman
+                  <!-- Tombol ini pindah ke section id="alur" via script.js -->
+                  <button class="link-inline" onclick="goTo('alur')">Alur Pendaftaran</button>.
+                </p>
+
+                <div class="mini-timeline">
+                  <div class="mt-item">
+                    <div class="mt-dot" style="background:var(--red);"></div>
+                    <div class="mt-content"><b>Pendaftaran</b><span>Pendaftaran mandiri dilakukan melalui website ini pada halaman pendaftaran.</span></div>
+                  </div>
+                  <div class="mt-item">
+                    <div class="mt-dot" style="background:var(--green);"></div>
+                    <div class="mt-content"><b>Verifikasi</b><span>Petugas akan memverifikasi data pendaftar yang akan mengikuti seleksi.</span></div>
+                  </div>
+                  <div class="mt-item">
+                    <div class="mt-dot" style="background:var(--gold);"></div>
+                    <div class="mt-content"><b>Seleksi & Survei</b><span>Tim Beasiswa Pendidikan melakukan seleksi dan survei kepada data yang lolos verifikasi.</span></div>
+                  </div>
+                  <div class="mt-item">
+                    <div class="mt-dot" style="background:var(--blue);"></div>
+                    <div class="mt-content"><b>Pengumuman</b><span>Data peserta yang lolos survei akan diumumkan melalui website ini.</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /.jright -->
+        </div><!-- /.jadwal-grid -->
+
+        <!-- Catatan/peringatan bahwa jadwal bisa berubah -->
+        <div class="disclaimer">
+          ⚠️ Jadwal di atas mengikuti pengumuman resmi tahun berjalan dan dapat berubah sewaktu-waktu.
+          Tanggal pasti selalu diumumkan melalui situs pendaftaran
+          <a href="https://beasiswa.kedirikab.go.id/" target="_blank" rel="noopener" style="color:var(--red);font-weight:700;">beasiswa.kedirikab.go.id</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. SECTION "KONTAK" (Kontak & FAQ)
+         Bagian FAQ (accordion) — script.js yang mengatur buka/tutup
+         jawaban ketika class .faq-q diklik (biasanya lewat class "open"
+         pada .faq-item).
+    ===================================================================== -->
+    <section class="page" id="kontak">
+      <div class="wrap">
+
+        <div class="section-head">
+          <span class="eyebrow">Kontak & FAQ</span>
+          <h2>Masih ada pertanyaan?</h2>
+          <p>Hubungi kantor Beasiswa Pendidikan Kabupaten Kediri atau baca pertanyaan yang paling sering diajukan pendaftar di bawah ini.</p>
+        </div>
+
+        <div class="kontak-grid">
+          <div class="faq-list">
+
+            <!-- Setiap .faq-item = 1 pertanyaan + 1 jawaban.
+                 .faq-q  = pertanyaan (bisa diklik untuk buka/tutup)
+                 .faq-a  = jawaban (disembunyikan lewat CSS sampai diklik) -->
+            <div class="faq-item">
+              <div class="faq-q">Apakah pendaftaran beasiswa ini dipungut biaya? <span class="plus">+</span></div>
+              <div class="faq-a">Tidak. Seluruh proses pendaftaran beasiswa GNOTA tidak dipungut biaya apa pun.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Bolehkah satu keluarga mendaftarkan lebih dari satu anak? <span class="plus">+</span></div>
+              <div class="faq-a">Pada sebagian besar jenjang umumnya berlaku satu anak per keluarga dalam satu periode pendaftaran — periksa ketentuan spesifik pada halaman "Jenis & Syarat" jenjang terkait.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Bagaimana jika berkas saya belum lengkap? <span class="plus">+</span></div>
+              <div class="faq-a">Petugas akan menandai kekurangan pada tahap verifikasi. Segera lengkapi berkas sebelum batas waktu yang ditentukan agar tidak gugur seleksi.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Bagaimana cara mengecek status pendaftaran saya? <span class="plus">+</span></div>
+              <div class="faq-a">Gunakan menu "Cek Pendaftaran" pada situs resmi beasiswa.kedirikab.go.id dengan memasukkan nomor pendaftaran Anda.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Apakah SKTM harus dokumen asli? <span class="plus">+</span></div>
+              <div class="faq-a">Ya. SKTM wajib asli dan ditandatangani oleh RT setempat serta Kepala Desa/Lurah, ditujukan kepada Pemerintah Kabupaten Kediri.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Apa yang harus tertera di FC rekening listrik? <span class="plus">+</span></div>
+              <div class="faq-a">Waktu pembayaran, nomor/nama ID pelanggan, dan nominal yang dibayarkan.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       7. FOOTER
+       Berisi: nama program, kontak (Instagram, WhatsApp, website, email),
+       dan alamat kantor (dengan tautan ke Google Maps).
+  ===================================================================== -->
+  <footer>
+    <div class="wrap footer-content">
+
+      <div class="footer-brand">
+        <h3>Beasiswa Pendidikan Berbudaya</h3>
+        <p>Informasi resmi beasiswa pendidikan Pemerintah Kabupaten Kediri.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Hubungi Kami</h4>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/disdikkabkediri/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <span>@disdikkabkediri</span>
+        </a>
+
+        <!-- Daftar nomor WhatsApp -->
+        <div class="footer-phone-list">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M8.5 8.5c.4 2.4 1.8 4.3 4.5 5.2l1.5-1.3"/></svg>
+          <span>
+            <a href="https://wa.me/6287831484152" target="_blank" rel="noopener">087831484152</a><br>
+            <a href="https://wa.me/6287729776861" target="_blank" rel="noopener">087729776861</a><br>
+            <a href="https://wa.me/6287711164683" target="_blank" rel="noopener">087711164683</a><br>
+           
+        </div>
+
+        <!-- Website resmi -->
+        <a href="https://beasiswa.kedirikab.go.id/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3Z"/></svg>
+          <span>beasiswa.kedirikab.go.id</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:gnotakabkediri@gmai.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>gnotakabkediri@gmai.com</span>
+        </a>
+      </div>
+
+      <!-- Alamat kantor, seluruh blok bisa diklik menuju Google Maps -->
+      <a class="footer-address" href="https://maps.app.goo.gl/c9RQHqGKUeQVMj3SA" target="_blank" rel="noopener">
+        <h4>Alamat</h4>
+        <p>Jl. Letjend Suprapto No. 42, Burengan, Kec. Pesantren, Kota Kediri 64131</p>
+      </a>
+    </div>
+
+    <!-- Baris copyright paling bawah -->
+    <div class="wrap footer-inner">
+      <span>© 2026 Dinas Pendidikan Kabupaten Kediri </span>
+      <span>Beasiswa Pendidikan Berbudaya</span>
+    </div>
+  </footer>
+
+  <!-- File JavaScript: mengatur pindah tab (goTo), tab kategori/jenjang,
+       dan buka-tutup FAQ. Diletakkan di akhir body supaya HTML sudah
+       selesai dimuat sebelum script dijalankan. -->
+  <script src="script.js"></script>
+
+</body>
+</html>
