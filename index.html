@@ -228,12 +228,12 @@
         <div class="button-container">
           <!-- Klik tombol ini akan scroll halus ke section id="alur-pendaftaran" -->
           <a href="#alur-pendaftaran" class="btn-panduan"
-             onclick="document.getElementById('alur-pendaftaran').scrollIntoView({behavior:'smooth'});return false;">
+             onclick="document.getElementById('alur-pendaftaran').scrollIntoView({behavior:'smooth',block:'start'});return false;">
              Alur Pendaftaran
           </a>
           <!-- Klik tombol ini akan scroll halus ke section id="alur-cek-status" -->
           <a href="#alur-cek-status" class="btn-panduan"
-             onclick="document.getElementById('alur-cek-status').scrollIntoView({behavior:'smooth'});return false;">
+             onclick="document.getElementById('alur-cek-status').scrollIntoView({behavior:'smooth',block:'start'});return false;">
              Alur Cek Status
           </a>
         </div>
@@ -1105,7 +1105,10 @@
         <div class="section-head">
           <span class="eyebrow">Jadwal Pelaksanaan</span>
           <h2>Setiap gelombang, waktunya berbeda.</h2>
-          <p>Pendaftaran dibuka bertahap per gelombang dan per kategori beasiswa. <br> Pastikan mendaftar dalam rentang tanggal yang berlaku. </br> </p>
+        </div>
+
+        <div class="jadwal-intro">
+          <p>Pendaftaran dibuka bertahap per gelombang dan per kategori beasiswa.<br><span>Pastikan mendaftar dalam rentang tanggal yang berlaku.</span></p>
         </div>
 
         <div class="jadwal-grid">
